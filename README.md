@@ -8,6 +8,7 @@
 **Email:** vachutha@stevens.edu
 
 **Project Title:** Strava Lite
+
 **Project Description:** Strava Lite is a Flask-based RESTful API service that allows users to track their running workouts. Users can create accounts, log their runs with details like date, time, and distance, and view their workout history. The application also includes social features where users can follow other runners and view their workouts.
 
 ## Resolved Issues
