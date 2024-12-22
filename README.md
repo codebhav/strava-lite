@@ -1,17 +1,34 @@
 # Strava Lite
 
-## Project Info
+## Project Description
 
-**Project Link:** https://github.com/codebhav/strava-lite
+Strava Lite is a Flask-based RESTful API service that allows users to track their running workouts. Users can create accounts, log their runs with details like date, time, and distance, and view their workout history. The application also includes social features where users can follow other runners and view their workouts.
 
-**Name:** Vaibhav Achuthananda  
-**Email:** vachutha@stevens.edu
+### Key Features
 
-**Project Title:** Strava Lite
-**Project Description:** Strava Lite is a Flask-based RESTful API service that allows users to track their running workouts. Users can create accounts, log their runs with details like date, time, and distance, and view their workout history. The application also includes social features where users can follow other runners and view their workouts.
+- User Management (Create, Read, Update, Delete)
+- Workout Tracking
+- Social Following System
+- Friend Workout Viewing
+- RESTful API Design
 
-## Resolved Issues
+### API Endpoints
 
-1. For the longest time I was struggling with finding a way to loop users for `ListUsers` inside the `return` statement. After serving my time on StackOverflow I figured out I could add the for loop at the end of the dictionary inside the array itself. Bingo!
-2. I was trying to parse follow-id like usual `follow_id = follow_friend_parser.parse_args().values()` which would return a dict_values object. But it worked fine after I changed it to `follow_id = follow_friend_parser.parse_args()["follow_id"]` to get the actual string value.
-3. Other bugs were pretty minor, it was mostly me forgetting to add a slash before the url in `routes.py` or spelling something incorrectly. Nevertheless, there are no more bugs in the project to the best of my knowledge.
+- `POST /user` - Register a new user
+- `GET /user/<user_id>` - Get user details
+- `DELETE /user/<user_id>` - Remove a user
+- `GET /users` - List all users
+- `PUT /workouts/<user_id>` - Add a workout
+- `GET /workouts/<user_id>` - List user's workouts
+- `PUT /follow-list/<user_id>` - Follow another user
+- `GET /follow-list/<user_id>/<follow_id>` - View friend's workouts
+
+## Dependencies
+
+The project requires the following Python packages:
+
+- Flask==2.3.2
+- Flask-RESTful==0.3.9
+- requests==2.32.3
+
+These can be installed using `pip install -r requirements.txt`
